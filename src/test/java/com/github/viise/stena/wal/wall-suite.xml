@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wall">
+    <test name="WallTest">
+        <classes>
+            <class name="com.github.viise.stena.wal.WalNaturalIntTestNG" />
+            <class name="com.github.viise.stena.wal.WalNotEmptyListTestNG" />
+            <class name="com.github.viise.stena.wal.WalNotEmptyStrTestNG" />
+            <class name="com.github.viise.stena.wal.WalNotNullTestNG" />
+            <class name="com.github.viise.stena.wal.WalNotZeroIntTestNG" />
+            <class name="com.github.viise.stena.wal.WalPositiveIntTestNG" />
+        </classes>
+    </test>
+</suite>
