@@ -27,7 +27,7 @@ public final class WalPositiveFloat implements Wall<Float> {
         walNotNull.protect(_floatObjName, floatObj);
         if (floatObj < 0.0f) {
             throw new ProtectException(String.format(
-                    "%s  must be positive.",
+                    "%s must be positive.",
                     _floatObjName
             ));
         }

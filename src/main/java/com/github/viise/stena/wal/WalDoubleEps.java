@@ -7,7 +7,7 @@ import com.github.viise.stena.Wall;
  * Double less than epsilon protection.
  * More suitable case of protection is double value is almost zero.
  */
-public final class WalDoubleEps implements Wall<Short> {
+public final class WalDoubleEps implements Wall<Double> {
 
     private final Wall<Object> walNotNull;
 
@@ -39,7 +39,7 @@ public final class WalDoubleEps implements Wall<Short> {
      * @throws ProtectException If double value is null and double is more than eps, or eps is null.
      */
     @Override
-    public void protect(final String doubleObjName, final Short doubleObj) throws ProtectException {
+    public void protect(final String doubleObjName, final Double doubleObj) throws ProtectException {
         String _doubleObjName = doubleObjName == null ? "double" : doubleObjName;
         walNotNull.protect(_doubleObjName, doubleObj);
         walNotNull.protect("eps", eps);
@@ -58,7 +58,7 @@ public final class WalDoubleEps implements Wall<Short> {
      * @throws ProtectException If double value is null and double is more than eps, or eps is null.
      */
     @Override
-    public void protect(final Short doubleObj) throws ProtectException {
+    public void protect(final Double doubleObj) throws ProtectException {
         protect("double", doubleObj);
     }
 }

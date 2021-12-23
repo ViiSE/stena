@@ -27,7 +27,7 @@ public final class WalPositiveLong implements Wall<Long> {
         walNotNull.protect(_longObjName, longObj);
         if (longObj < 0L) {
             throw new ProtectException(String.format(
-                    "%s  must be positive.",
+                    "%s must be positive.",
                     _longObjName
             ));
         }
