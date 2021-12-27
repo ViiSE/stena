@@ -4,12 +4,12 @@ import com.github.viise.stena.ProtectException;
 import com.github.viise.stena.Wall;
 
 import java.util.Map;
-import java.util.SortedMap;
+import java.util.NavigableMap;
 
 /**
  * Not empty navigableMap protection.
  */
-public final class WalNotEmptyNavigableMap implements Wall<SortedMap<?, ?>> {
+public final class WalNotEmptyNavigableMap implements Wall<NavigableMap<?, ?>> {
 
     private final Wall<Map<?, ?>> walNotEmptyMap;
 
@@ -25,7 +25,7 @@ public final class WalNotEmptyNavigableMap implements Wall<SortedMap<?, ?>> {
      * @throws ProtectException If navigableMap is null or empty.
      */
     @Override
-    public void protect(final String navMapName, final SortedMap<?, ?> navMap) throws ProtectException {
+    public void protect(final String navMapName, final NavigableMap<?, ?> navMap) throws ProtectException {
         String _navMapName = navMapName == null ? "navigableMap" : navMapName;
         walNotEmptyMap.protect(_navMapName, navMap);
     }
@@ -37,7 +37,7 @@ public final class WalNotEmptyNavigableMap implements Wall<SortedMap<?, ?>> {
      * @throws ProtectException If navigableMap is null or empty.
      */
     @Override
-    public void protect(final SortedMap<?, ?> navMap) throws ProtectException {
+    public void protect(final NavigableMap<?, ?> navMap) throws ProtectException {
         protect("navigableMap", navMap);
     }
 }

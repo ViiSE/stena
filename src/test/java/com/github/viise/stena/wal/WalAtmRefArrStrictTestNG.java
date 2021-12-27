@@ -37,7 +37,7 @@ public class WalAtmRefArrStrictTestNG {
 
     @Test(
             expectedExceptions = ProtectException.class,
-            expectedExceptionsMessageRegExp = "myAtmRefArr\\[1\\] is null."
+            expectedExceptionsMessageRegExp = "atomicReferenceArray\\[1\\] is null."
     )
     public void protect_valueIsNull_2() throws ProtectException {
         walAtmIntArr.protect(new AtomicReferenceArray<>(new String[] {"Hello!", null, "World!"}));
