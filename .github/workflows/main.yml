@@ -20,3 +20,5 @@ jobs:
         cache: maven
     - name: Build and Test
       run: mvn clean package --file pom.xml
+    - name: Code Coverage
+      uses: codecov/codecov-action@v2.1.0
