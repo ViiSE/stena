@@ -1,5 +1,5 @@
 # stena
-Object-Oriented library for protection objects.
+Object-Oriented library for protection objects
 
 ### What?
 When writing code, we often check objects: null or empty, negative or positive, and so on. For example, we can create
