@@ -1,3 +1,6 @@
+[![Stena-CI](https://github.com/ViiSE/stena/actions/workflows/main.yml/badge.svg)](https://github.com/ViiSE/stena/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/viise/stena/branch/main/graph/badge.svg?token=0GPP4HUXXR)](https://codecov.io/gh/viise/stena)
+
 # stena
 Object-Oriented library for protection objects.
 
