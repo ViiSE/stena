@@ -3,7 +3,7 @@ name: Stena-CI Deploy
 on:
   push:
     branches: [ main ]
-    paths-ignore: [ '**/README.md', '.github/workflows/main.yaml', '.github/workflows/deploy.yaml' ]
+    paths-ignore: [ '**/README.md', '.github/workflows/main.yml', '.github/workflows/deploy.yml' ]
 
 jobs:
   build:
