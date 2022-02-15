@@ -20,7 +20,7 @@ jobs:
     - name: Build and Test
       run: mvn clean package --file pom.xml
     - name: Deploy to Nexus
-      run: mvn --settings .m2/settings.xml --file pom.xml -P ossrh,deploy-artifact -Djavadoc.home=/opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin/javadoc -Dsona.uname=SONA_UNAME -Dsona.pass=SONA_PASS -Dgpg.kname=GPG_KNAME -Dgpg.pass=GPG_PASS
+      run: mvn --settings .m2/settings.xml --file pom.xml -P ossrh,deploy-artifact -Djavadoc.home=/opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin/javadoc -Dsona.uname=SONA_UNAME -Dsona.pass=SONA_PASS -Dgpg.kname=GPG_KNAME -Dgpg.pass=GPG_PASS deploy
       env:
         SONA_UNAME: ${{ secrets.SONA_UNAME }}
         SONA_PASS: ${{ secrets.SONA_PASS }}
