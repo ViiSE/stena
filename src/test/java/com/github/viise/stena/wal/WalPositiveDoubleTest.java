@@ -24,11 +24,6 @@ public class WalPositiveDoubleTest {
         walPositiveDouble.protect(null, 1.0d);
     }
 
-    @Test
-    public void protect_success_objNameIsNull_2() throws ProtectException {
-        walPositiveDouble.protect(null, 2.0d);
-    }
-
     @Test(
             expectedExceptions = ProtectException.class,
             expectedExceptionsMessageRegExp = "double is null."
