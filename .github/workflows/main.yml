@@ -1,8 +1,6 @@
 name: Stena-CI
 
 on:
-  push:
-    paths-ignore: [ '**/README.md', '.github/workflows/deploy.yml' ]
   pull_request:
     branches: [ main ]
 
