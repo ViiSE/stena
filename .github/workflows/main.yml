@@ -24,7 +24,7 @@ jobs:
       uses: codecov/codecov-action@v2.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-    - name: deploy to nexus
-      run: echo $JAVA_HOME
+    - name: Deploy to Nexus
+      run: ls /opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin
       
       
