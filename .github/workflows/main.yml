@@ -1,8 +1,9 @@
-name: Stena-CI
+name: Stena-CI Pull Request
 
 on:
-  pull_request:
+  push:
     branches: [ main ]
+    paths-ignore: [ '**/README.md' ]
 
 jobs:
   build:
@@ -22,10 +23,3 @@ jobs:
       uses: codecov/codecov-action@v2.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-    - name: Deploy to Nexus
-      run: mvn --settings .m2/settings.xml --file pom.xml -P ossrh,deploy-artifact -Djavadoc.home=/opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin/javadoc -Dsona.uname=SONA_UNAME -Dsona.pass=SONA_PASS -Dgpg.kname=GPG_KNAME -Dgpg.pass=GPG_PASS
-      env:
-        SONA_UNAME: ${{ secrets.SONA_UNAME }}
-        SONA_PASS: ${{ secrets.SONA_PASS }}
-        GPG_KNAME: ${{ secrets.GPG_KNAME }}
-        GPG_PASS: ${{ secrets.GPG_PASS }}
