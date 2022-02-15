@@ -1,8 +1,6 @@
 name: Stena-CI
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -25,6 +23,9 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
     - name: Deploy to Nexus
-      run: ls /opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin
-      
-      
+      run: mvn --settings .m2/settings.xml --file pom.xml -P ossrh,deploy-artifact -Djavadoc.home=/opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin/javadoc -Dsona.uname=SONA_UNAME -Dsona.pass=SONA_PASS -Dgpg.kname=GPG_KNAME -Dgpg.pass=GPG_PASS
+      env:
+        SONA_UNAME: ${{ secrets.SONA_UNAME }}
+        SONA_PASS: ${{ secrets.SONA_PASS }}
+        GPG_KNAME: ${{ secrets.GPG_KNAME }}
+        GPG_PASS: ${{ secrets.GPG_PASS }}
