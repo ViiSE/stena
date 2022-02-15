@@ -1,9 +1,9 @@
-name: Stena-CI Pull Request
+name: Stena-CI Deploy
 
 on:
   push:
     branches: [ main ]
-    paths-ignore: [ '**/README.md', '**/main.yaml', '**/deploy.yaml' ]
+    paths-ignore: [ '**/README.md', '.github/workflows/main.yaml', '.github/workflows/deploy.yaml' ]
 
 jobs:
   build:
