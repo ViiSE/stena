@@ -1,4 +1,4 @@
-name: Stena-CI Pull Request
+name: Stena-CI
 
 on:
   push:
