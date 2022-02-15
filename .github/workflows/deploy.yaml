@@ -1,0 +1,28 @@
+name: Stena-CI Pull Request
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [ '**/README.md', '**/main.yaml', '**/deploy.yaml' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set Up
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'liberica'
+        cache: maven
+    - name: Build and Test
+      run: mvn clean package --file pom.xml
+    - name: Deploy to Nexus
+      run: mvn --settings .m2/settings.xml --file pom.xml -P ossrh,deploy-artifact -Djavadoc.home=/opt/hostedtoolcache/Java_Liberica_jdk/8.0.322-6/x64/bin/javadoc -Dsona.uname=SONA_UNAME -Dsona.pass=SONA_PASS -Dgpg.kname=GPG_KNAME -Dgpg.pass=GPG_PASS
+      env:
+        SONA_UNAME: ${{ secrets.SONA_UNAME }}
+        SONA_PASS: ${{ secrets.SONA_PASS }}
+        GPG_KNAME: ${{ secrets.GPG_KNAME }}
+        GPG_PASS: ${{ secrets.GPG_PASS }}
