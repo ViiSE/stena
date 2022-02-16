@@ -1,9 +1,27 @@
 [![Stena-CI](https://github.com/ViiSE/stena/actions/workflows/main.yml/badge.svg)](https://github.com/ViiSE/stena/actions/workflows/main.yml)
-[![Stena-CI Deploy](https://github.com/ViiSE/stena/actions/workflows/deploy.yml/badge.svg)](https://github.com/ViiSE/stena/actions/workflows/deploy.yml)
 [![codecov](https://codecov.io/gh/viise/stena/branch/main/graph/badge.svg?token=0GPP4HUXXR)](https://codecov.io/gh/viise/stena)
+
+[![Stena-CI Deploy](https://github.com/ViiSE/stena/actions/workflows/deploy.yml/badge.svg)](https://github.com/ViiSE/stena/actions/workflows/deploy.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.viise.stena/stena.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.viise.stena/stena/)
 
 # stena
 Object-Oriented library for protection objects.
+
+## Get
+
+#### Maven
+```xml
+<dependency>
+  <groupId>com.github.viise.stena</groupId>
+  <artifactId>stena</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+#### Gradle
+```groovy
+implementation 'com.github.viise.stena:stena:1.0.0'
+```
 
 ### What?
 When writing code, we often check objects: null or empty, negative or positive, and so on. For example, we can create
