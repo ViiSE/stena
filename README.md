@@ -20,7 +20,7 @@ Object-Oriented library for protection objects.
 
 #### Gradle
 ```groovy
-implementation 'com.github.viise.stena:stena:1.0.0'
+implementation 'com.github.viise.stena:stena:1.0.1'
 ```
 
 ### What?
